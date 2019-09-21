@@ -1,0 +1,8 @@
+<h1><%= @student.to_s %></h1>
+<h2>Status:</h2><h3><%= @student.active %></h3><br>
+<form action="/students/<%= @student.id %>" method="POST">
+<input type="hidden" name="_method" value="PUT" />
+<input type="radio" name="student[active]"  value="true" <%= 'checked' if !@student.active %>>True<br>
+<input type="radio" name="student[active]" value="false" <%= 'checked' if @student.active %>>False<br>
+<input type="submit">
+</form>
